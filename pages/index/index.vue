@@ -1,51 +1,39 @@
 <template>
 	<view class="content">
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+		<view class="image">
+			<image src="../../static/nodata.png" mode=""></image>
+			<view class="text">暂无任何记录哦</view>
+		</view>		
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
+export default {
+	data() {
+		return {};
+	},
+	onLoad() {},
+	methods: {}
+};
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+<style lang="scss" scoped>
+.content {
+	.image {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		image {
+			width: 46px;
+			height: 46px;
+		}
 	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
+	.text {
+		color: #dedede;
+		font-size: 12px;
+		margin-left: 60px;
+	    margin-top: -40px;
 	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+}
 </style>
