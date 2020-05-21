@@ -12,9 +12,7 @@
 	}
 </script>
 
-<style>
+<style lang = 'scss'>
 	/*每个页面公共css */
-	uni-page-body{
-		height: 100%;
-	}
+	@import url("./common/css/common.scss");
 </style>

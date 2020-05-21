@@ -1,39 +1,57 @@
 <template>
 	<view class="content">
-		<view class="image">
-			<image src="../../static/nodata.png" mode=""></image>
-			<view class="text">暂无任何记录哦</view>
-		</view>		
+		<input class="uni-input" type="text" v-model="username" />
+		<view class="uni-form-item uni-column">
+			<text class="title">密码：</text>
+			<input class="uni-input" password type="number" v-model="password" />
+		</view>
+		<button class="mini-btn" type="default" @click="btn" size="mini">确认</button>
 	</view>
 </template>
 
 <script>
+	import {login} from '../../apis/login.js'
 export default {
 	data() {
-		return {};
+		return {
+			password: '',
+			username:''
+		};
 	},
 	onLoad() {},
-	methods: {}
+	methods: {
+		btn(){
+			console.log(this.username);
+			console.log(login);			
+		}
+	}
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
 .content {
-	.image {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translateX(-50%) translateY(-50%);
-		image {
-			width: 46px;
-			height: 46px;
-		}
-	}
-	.text {
-		color: #dedede;
-		font-size: 12px;
-		margin-left: 60px;
-	    margin-top: -40px;
-	}
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo {
+	height: 200rpx;
+	width: 200rpx;
+	margin-top: 200rpx;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50rpx;
+}
+
+.text-area {
+	display: flex;
+	justify-content: center;
+}
+
+.title {
+	font-size: 36rpx;
+	color: #8f8f94;
 }
 </style>
