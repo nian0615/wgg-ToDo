@@ -1,11 +1,6 @@
 <template>
 	<view class="content">
-		<input class="uni-input" type="text" v-model="username" />
-		<view class="uni-form-item uni-column">
-			<text class="title">密码：</text>
-			<input class="uni-input" password type="number" v-model="password" />
-		</view>
-		<button class="mini-btn" type="default" @click="btn" size="mini">确认</button>
+
 	</view>
 </template>
 
@@ -13,30 +8,12 @@
 export default {
 	data() {
 		return {
-			password: '',
-			username:''
 		};
 	},
 	onLoad() {},
 	methods: {
-		btn(){
-			uni.request({
-			    url: 'http://rap2.taobao.org:38080/app/mock/255027/user/login', 
-				method:'POST',
-			    data: {
-			        password: 'admin',
-			        username: '123456'
-			    },
-			    header: {
-			        'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息
-			    },
-			    success: (res) => {
-			        console.log(res.data);
-			        // this.text = 'request success';
-			    }
-			});
-				
-		}
+		
+			
 	}
 };
 </script>
