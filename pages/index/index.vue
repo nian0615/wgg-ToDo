@@ -10,7 +10,6 @@
 </template>
 
 <script>
-	import {login} from '../../apis/login.js'
 export default {
 	data() {
 		return {
@@ -21,8 +20,22 @@ export default {
 	onLoad() {},
 	methods: {
 		btn(){
-			console.log(this.username);
-			console.log(login);			
+			uni.request({
+			    url: 'http://rap2.taobao.org:38080/app/mock/255027/user/login', 
+				method:'POST',
+			    data: {
+			        password: 'admin',
+			        username: '123456'
+			    },
+			    header: {
+			        'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息
+			    },
+			    success: (res) => {
+			        console.log(res.data);
+			        // this.text = 'request success';
+			    }
+			});
+				
 		}
 	}
 };
